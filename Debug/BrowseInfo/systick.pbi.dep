@@ -1,0 +1,6 @@
+C:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.pbi: \
+  C:\embedded_programming\Project_Calculator\systick.c \
+  C:\embedded_programming\Project_Calculator/systick.h \
+  C:\embedded_programming\Project_Calculator/bitwise_operation.h \
+  C:\embedded_programming\Project_Calculator/tm4c.h \
+  C:\embedded_programming\Project_Calculator/UART.h

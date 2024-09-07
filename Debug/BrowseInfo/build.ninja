@@ -1,0 +1,130 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\tools\iar\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++C$:\tools\iar\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\tools\iar\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++C$:\tools\iar\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = C$:\tools\iar\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++C$:\tools\iar\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = C$:\tools\iar\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++C$:\tools\iar\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\delay.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\delay.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\DIO.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\DIO.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\gptimer0.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\gptimer0.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\keypad.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\keypad.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\main.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\main.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\modes.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\modes.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\startup_ewarm.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\startup_ewarm.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\systick.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\systick.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\embedded_programming\Project_Calculator\UART.c -xcl_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.xcl -macro_file C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.tmp -icc_path C$:\tools\iar\arm\bin\iccarm.exe
+  flags = C$:\embedded_programming\Project_Calculator\UART.c -o C$:\embedded_programming\Project_Calculator\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config C$:\tools\iar\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.tmp
+  rspfile_name = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.xcl.rsp
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.xcl |  $
+C$:\embedded_programming\Project_Calculator\delay.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.xcl |  $
+C$:\embedded_programming\Project_Calculator\DIO.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.xcl |  $
+C$:\embedded_programming\Project_Calculator\gptimer0.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.xcl |  $
+C$:\embedded_programming\Project_Calculator\keypad.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.xcl |  $
+C$:\embedded_programming\Project_Calculator\main.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.xcl |  $
+C$:\embedded_programming\Project_Calculator\modes.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.xcl |  $
+C$:\embedded_programming\Project_Calculator\startup_ewarm.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.xcl |  $
+C$:\embedded_programming\Project_Calculator\systick.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.pbi : INDEXER C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.xcl |  $
+C$:\embedded_programming\Project_Calculator\UART.c
+  flags = -out=C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.pbi -f C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.xcl
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator.pbw : MAKEBROWSE C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator.pbd
+  flags = C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator.pbd -output C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator.pbw
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part0.pbi : PDBLINK C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.pbi |  $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.pbi $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.pbi
+  flags = -M C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part0.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\delay.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\DIO.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\gptimer0.pbi
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part1.pbi : PDBLINK C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.pbi |  $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.pbi $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.pbi
+  flags = -M C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part1.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\keypad.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\modes.pbi
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part2.pbi : PDBLINK C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.pbi |  $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.pbi $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.pbi
+  flags = -M C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part2.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\systick.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\UART.pbi
+
+build C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator.pbd : PDBLINK C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part0.pbi |  $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part1.pbi $
+C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part2.pbi
+  flags = -M C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator.pbd C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part0.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part1.pbi C$:\embedded_programming\Project_Calculator\Debug\BrowseInfo\Project_Calculator_part2.pbi
+

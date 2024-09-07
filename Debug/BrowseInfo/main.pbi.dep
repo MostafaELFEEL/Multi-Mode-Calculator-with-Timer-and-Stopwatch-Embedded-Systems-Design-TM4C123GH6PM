@@ -1,0 +1,9 @@
+C:\embedded_programming\Project_Calculator\Debug\BrowseInfo\main.pbi: \
+  C:\embedded_programming\Project_Calculator\DIO.h \
+  C:\embedded_programming\Project_Calculator\gptimer0.h \
+  C:\embedded_programming\Project_Calculator\systick.h \
+  C:\embedded_programming\Project_Calculator\UART.h \
+  C:\embedded_programming\Project_Calculator\keypad.h \
+  C:\embedded_programming\Project_Calculator\modes.h \
+  C:\embedded_programming\Project_Calculator\tm4c.h \
+  C:\embedded_programming\Project_Calculator\main.c

@@ -1,0 +1,6 @@
+C:\embedded_programming\Project_Calculator\Debug\BrowseInfo\startup_ewarm.pbi: \
+  C:\tools\iar\arm\inc\c\DLib_Product.h \
+  C:\tools\iar\arm\inc\c\DLib_Config_Normal.h \
+  C:\tools\iar\arm\inc\c\DLib_Defaults.h C:\tools\iar\arm\inc\c\yvals.h \
+  C:\tools\iar\arm\inc\c\ycheck.h C:\tools\iar\arm\inc\c\stdint.h \
+  C:\embedded_programming\Project_Calculator\startup_ewarm.c
