@@ -35,7 +35,7 @@ This project demonstrates the design and implementation of a multi-mode calculat
 - **UART communication** to display outputs and switch between modes via the **PUTTY** serial monitor.
 
 ## Video Demonstration
-[Watch the project demo video here](https://youtu.be/gBvxX-iDDLU?si=FzSMhQaSHLkOLjER)
+https://youtu.be/gBvxX-iDDLU?si=FzSMhQaSHLkOLjER
 
 ## How to Use
 1. Upload the code to your **TM4C123GH6PM** microcontroller.
